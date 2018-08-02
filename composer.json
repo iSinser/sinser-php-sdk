@@ -1,0 +1,29 @@
+{
+  "name": "isinser/sinser-php-sdk",
+  "description": "sinser's sdk for php",
+  "keywords": [
+    "sinser",
+    "xunxi"
+  ],
+  "homepage": "https://github.com/iSinser/sinser-php-sdk",
+   "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "aipaiteam",
+      "email": "1006793326@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.3.0", 
+  },
+  "autoload": {
+    "psr-4": {
+      "sinser-php-sdk\\": "src"
+    }
+  },
+  "config": {
+    "process-timeout": 1800
+  }
+}
