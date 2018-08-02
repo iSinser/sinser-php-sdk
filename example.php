@@ -1,5 +1,6 @@
 <?php 
-require 'sinser-php-sdk/src/main.php';
+require 'vendor/autoload.php'
+//require '/vendor/autoload.php';若使用源码方式下载SDK 请将本条引用的注释去除，将上一条引用注释
 
 $sinser = new sinser;
 $user = '';//ID 即登录帐号 需改动
