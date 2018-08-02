@@ -1,5 +1,5 @@
 <?php 
-require 'vendor/autoload.php';
+require 'sinser-php-sdk/src/main.php';
 
 $sinser = new sinser;
 $user = '';//ID 即登录帐号 需改动
@@ -16,7 +16,7 @@ print_r ($ret);
 
 //getdata 参数说明
 //第三个参数=json时 返回json格式数据
-//第三个参数为1-13是 返回对应单个数据
+//第三个参数为1-13时 返回对应单个数据
 $ret = $sinser -> getdata($ak,$sk,'json');//获取统计数据
 print_r ($ret);
 
