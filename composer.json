@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "sinser-php-sdk\\": "src"
+      "isinser\\sinser-php-sdk\\": "src/"
     }
   },
   "config": {
