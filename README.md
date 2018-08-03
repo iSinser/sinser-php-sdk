@@ -1,5 +1,5 @@
 # SINSER-PHP-SDK
-迅析PHP SDK
+点击 [此处](http://sinser.applinzi.com/) 前往迅析官网
 
 
 ## 环境准备
