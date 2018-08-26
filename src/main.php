@@ -25,8 +25,11 @@ class sinser{
 	public function statistics($sid,$Authorization){
 		$ch = curl_init();
 		$timeout = 5;
+		$ip=getIp();
+		$lastpage=getFromPage();
+		$os=get_Os();
+		curl_setopt ($ch, CURLOPT_URL, 'https://sinser.applinzi.com/api/statistics.php');
 		curl_setopt($ch, CURLOPT_POSTFIELDS, "sid=$sid&authorization=$Authorization&ip=$ip&lastpage=$lastpage&os=$os&sdk=1");
-		curl_setopt($ch, CURLOPT_POSTFIELDS, "sid=$sid&authorization=$Authorization");
 		curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 		$file_contents = curl_exec($ch);
@@ -66,11 +69,15 @@ class sinser{
 		
 		
 	}
-	function getFromPage(){
+	
+
+}
+
+function getFromPage(){
 		return $_SERVER['HTTP_REFERER'];
 	}
 	
-	function get_Os(){
+function get_Os(){
        if(!empty($_SERVER['HTTP_USER_AGENT'])){
            $OS = $_SERVER['HTTP_USER_AGENT'];
               if (preg_match('/win/i',$OS)) {
@@ -114,7 +121,7 @@ class sinser{
                return "Unknown";
             }   
    }
-   function getIp(){
+function getIp(){
 		if ($_SERVER['REMOTE_ADDR']) {
 			$cip = $_SERVER['REMOTE_ADDR'];
 		} elseif (getenv("REMOTE_ADDR")) {
@@ -126,9 +133,5 @@ class sinser{
 		}
 			return $cip;
 		}	
-
-}
-
-
 
 ?>
