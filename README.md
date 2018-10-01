@@ -34,7 +34,7 @@ composer require isinser/sinser-php-sdk
 ```
 请注意，vendor文件夹和vendor/autoload.php脚本由Composer生成;，它们不是Sinser-php-sdk的一部分。若您不选择Composer方式获取SDK，需要手动引入类，这一点在下文源码方式中有详细讲解。
 
-#### 1、源码方式
+#### 2、源码方式
 源码方式安装SDK的步骤如下：
 
 1.  在[github发布页面](https://github.com/iSinser/sinser-php-sdk)下载相应的zip文件
@@ -67,11 +67,13 @@ $ret = $sinser -> statistics($ak,$Authorization);
 ```
 $ret = $sinser -> getdata($ak,$sk,$type);
 ```
-方法getdata()的参数三填写规则详解：
-若$type=='json'，则将所有数据以json格式全部返回。
-若$type=='1'(可选值1~13)，则返回单项数据。
-
 具体参数对应值与返回数据对应值可查阅 [迅析API文档 - 查询接口](https://www.kancloud.cn/aipaiteam/sinser/711067)
 
+### 用户上线
+发起统计请求中已包含了用户上线，该独立的接口仅用于保持用户存活，达到用户长期在线。
+请求示例
 
+```
+$ret = $sinser -> online($ak,$Authorization);
+```
 至此，迅析SDK安装并调用完成。
