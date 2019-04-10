@@ -17,8 +17,9 @@ print_r ($ret);
 $ret = $sinser -> getdata(base64_encode($ak),sha1($sk));//获取统计数据
 print_r ($ret);
 
-//$ret = $sinser -> online($ak,$Authorization);//用户上线（已集成在统计接口中，该独立接口仅用于保持用户心跳，以达到用户长期在线，自行选择是否使用）
+//$ret = $sinser -> online($ak,$Authorization);//用户上线（已集成在统计接口中，该独立接口仅用于保持用户心跳，以达到用户长期在线）
 //print_r ($ret);
+
 
 ?>
 
